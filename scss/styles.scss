@@ -43,7 +43,6 @@ $shade: rgba(0, 0, 0, 0.3);
 		align-items: center;
 		z-index: 1;
 		overflow: hidden;
-		border: 20px solid #2e3f58;
 		&::after {
 			content: "";
 			position: absolute;
@@ -295,7 +294,6 @@ $shade: rgba(0, 0, 0, 0.3);
 		align-items: center;
 		height: 100vh;
 		width: 100%;
-
 		z-index: 10;
 		.name {
 			position: fixed;

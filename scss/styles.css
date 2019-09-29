@@ -58,7 +58,6 @@ ul {
           align-items: center;
   z-index: 1;
   overflow: hidden;
-  border: 20px solid #2e3f58;
 }
 
 .background .code_bg::after {
