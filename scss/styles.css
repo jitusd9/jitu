@@ -98,8 +98,10 @@ ul {
 
 @media (max-width: 700px) {
   .background .circle {
-    height: 100px;
-    width: 100px;
+    top: 40%;
+    left: 30%;
+    height: 160px;
+    width: 160px;
   }
 }
 
@@ -428,7 +430,7 @@ ul {
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
-  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 700px) {
@@ -514,8 +516,6 @@ ul {
           box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 .main .portfolio .container .gallary .card-box .card:hover {
@@ -551,8 +551,8 @@ ul {
 .main .portfolio .container .gallary .card-box .card:hover img {
   -webkit-transform: translateZ(30px);
           transform: translateZ(30px);
-  -webkit-box-shadow: 0px 20px 8px -10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 20px 8px -10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 20px 10px -10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 20px 10px -10px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 700px) {
@@ -578,15 +578,15 @@ ul {
   border: none;
   -webkit-transform: translateZ(15px);
           transform: translateZ(15px);
-  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 .main .portfolio .container .gallary .card-box .card .btn:hover {
-  -webkit-box-shadow: 0 10px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 10px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
   -webkit-transform: translateY(-6px) translateZ(30px);
           transform: translateY(-6px) translateZ(30px);
 }
@@ -607,32 +607,10 @@ ul {
   transition: all 0.3s;
 }
 
-@-webkit-keyframes dive {
-  0% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
-  }
-  100% {
-    -webkit-transform: translateY(5px);
-            transform: translateY(5px);
-  }
-}
-
-@keyframes dive {
-  0% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
-  }
-  100% {
-    -webkit-transform: translateY(5px);
-            transform: translateY(5px);
-  }
-}
-
 @media (max-width: 700px) {
   .main .portfolio .container .gallary .card-box .card img {
-    -webkit-animation: dive 1.5s infinite alternate ease-in-out;
-            animation: dive 1.5s infinite alternate ease-in-out;
+    -webkit-transform: none;
+            transform: none;
   }
 }
 
@@ -640,6 +618,8 @@ ul {
   .main .portfolio .container .gallary .card-box .card {
     -webkit-transform: none;
             transform: none;
+    -webkit-transform-style: unset;
+            transform-style: unset;
   }
 }
 
@@ -693,7 +673,7 @@ ul {
 }
 
 .main .education .container h2 {
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 700px) {
@@ -742,7 +722,7 @@ ul {
 .main .education .container .self-taught p {
   font-size: 1.4rem;
   color: #042453;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .main .education .container .personal {
@@ -763,12 +743,12 @@ ul {
 }
 
 .main .contact h2 {
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 700px) {
   .main .contact h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
 
