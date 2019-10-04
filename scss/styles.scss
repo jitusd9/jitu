@@ -536,12 +536,27 @@ $shade: rgba(0, 0, 0, 0.2);
 			a {
 				text-decoration: none;
 				font-size: 2rem;
-			}
-			.fa-github {
-				color: #333;
-			}
-			.fa-envelope-square {
-				color: #ea4335;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				.footer_icon {
+					height: 50px;
+					width: 50px;
+					@media (max-width: 700px) {
+						height: 30px;
+						width: 30px;
+					}
+				}
+				span {
+					font-size: 1.1rem;
+					@media (max-width: 700px) {
+						font-size: 0.7rem;
+					}
+				}
+				&:hover {
+					color: #fe3503;
+				}
 			}
 		}
 	}
