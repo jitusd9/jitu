@@ -5,7 +5,8 @@ body {
 	background: linear-gradient(-45deg, #00ffdd, rgb(0, 162, 255)) center center /
 		cover no-repeat;
 	background: #2e4058;
-	background: #f4f4f4;
+	background: #f8f8f8;
+	overflow-x: hidden;
 }
 * {
 	box-sizing: border-box;
@@ -227,10 +228,6 @@ $shade: rgba(0, 0, 0, 0.2);
 	}
 }
 
-.nav-toggle:hover {
-	opacity: 0.8;
-}
-
 .nav-toggle .nav-toggle-bar,
 .nav-toggle .nav-toggle-bar::after,
 .nav-toggle .nav-toggle-bar::before {
@@ -278,13 +275,16 @@ $shade: rgba(0, 0, 0, 0.2);
 	-ms-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
+	background: #fff;
 }
 
 .nav-toggle.expanded .nav-toggle-bar::before {
 	transform: rotate(-45deg);
+	background: #fff;
 }
 
 // main content---------->
+
 .main {
 	height: auto;
 	width: 100%;
@@ -342,11 +342,17 @@ $shade: rgba(0, 0, 0, 0.2);
 	.portfolio {
 		position: relative;
 		z-index: 20;
-		background: url(../img/random_grey_variations_@2X.png);
+		// background: url(../img/random_grey_variations_@2X.png);
+		background: #f8f8f8;
+		width: 80%;
+		margin: 0 auto;
+		border-radius: 10px;
+		box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1) inset;
+
 		.container {
 			padding: 50px 0;
 			h2 {
-				text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+				// text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 				@media (max-width: 700px) {
 					font-size: 2rem;
 				}
@@ -449,8 +455,8 @@ $shade: rgba(0, 0, 0, 0.2);
 		.container {
 			padding: 50px 0;
 			border: 10px solid #fff;
-			background: url("../img/tic-tac-toe.png");
-			box-shadow: 0 30px 20px -10px rgba(0, 0, 0, 0.1),
+			background:linear-gradient(rgba(255, 255, 255, 0.6),rgba(255, 255, 255, 0.6)), url("../img/tic-tac-toe.png");
+			box-shadow: 0 30px 20px -15px rgba(0, 0, 0, 0.1),
 				0 0 20px rgba(0, 0, 0, 0.1) inset;
 			height: auto;
 			display: flex;
@@ -463,7 +469,7 @@ $shade: rgba(0, 0, 0, 0.2);
 			}
 			h2 {
 				// font-size: 3rem;
-				text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+				// text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 				@media (max-width: 700px) {
 					font-size: 2.5rem;
 				}
@@ -475,7 +481,7 @@ $shade: rgba(0, 0, 0, 0.2);
 				li {
 					display: inline-block;
 					padding: 5px;
-					color: #042453;
+					color: #0679ef;
 					font-weight: bold;
 					font-size: 1.3rem;
 					text-shadow: 0 0 2px #0424534f;
@@ -492,18 +498,16 @@ $shade: rgba(0, 0, 0, 0.2);
 			}
 			.self-taught {
 				position: relative;
-				margin-top: 30px;
+				margin-top: 24px;
 				padding: 10px 10px;
 				border: 1px solid #ccc;
 				border-left: none;
 				border-right: none;
-				strong {
-					color: #ff4107;
-				}
+				
 				p {
 					font-size: 1.4rem;
-					color: #042453;
-					text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+					color: #021e82;
+					text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 				}
 			}
 			.personal {
@@ -524,7 +528,7 @@ $shade: rgba(0, 0, 0, 0.2);
 		position: relative;
 		z-index: 20;
 		h2 {
-			text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+			// text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 			@media (max-width: 700px) {
 				font-size: 2.5rem;
 			}

@@ -5,7 +5,8 @@ html {
 body {
   background: linear-gradient(-45deg, #00ffdd, #00a2ff) center center/cover no-repeat;
   background: #2e4058;
-  background: #f4f4f4;
+  background: #f8f8f8;
+  overflow-x: hidden;
 }
 
 * {
@@ -308,10 +309,6 @@ ul {
   }
 }
 
-.nav-toggle:hover {
-  opacity: 0.8;
-}
-
 .nav-toggle .nav-toggle-bar,
 .nav-toggle .nav-toggle-bar::after,
 .nav-toggle .nav-toggle-bar::before {
@@ -371,11 +368,13 @@ ul {
 .nav-toggle.expanded .nav-toggle-bar::after {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  background: #fff;
 }
 
 .nav-toggle.expanded .nav-toggle-bar::before {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+  background: #fff;
 }
 
 .main {
@@ -465,15 +464,16 @@ ul {
 .main .portfolio {
   position: relative;
   z-index: 20;
-  background: url(../img/random_grey_variations_@2X.png);
+  background: #f8f8f8;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1) inset;
+          box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1) inset;
 }
 
 .main .portfolio .container {
   padding: 50px 0;
-}
-
-.main .portfolio .container h2 {
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 700px) {
@@ -646,9 +646,10 @@ ul {
 .main .education .container {
   padding: 50px 0;
   border: 10px solid #fff;
-  background: url("../img/tic-tac-toe.png");
-  -webkit-box-shadow: 0 30px 20px -10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-          box-shadow: 0 30px 20px -10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url("../img/tic-tac-toe.png");
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/tic-tac-toe.png");
+  -webkit-box-shadow: 0 30px 20px -15px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+          box-shadow: 0 30px 20px -15px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.1) inset;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -672,10 +673,6 @@ ul {
   }
 }
 
-.main .education .container h2 {
-  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-}
-
 @media (max-width: 700px) {
   .main .education .container h2 {
     font-size: 2.5rem;
@@ -690,7 +687,7 @@ ul {
 .main .education .container .skills li {
   display: inline-block;
   padding: 5px;
-  color: #042453;
+  color: #0679ef;
   font-weight: bold;
   font-size: 1.3rem;
   text-shadow: 0 0 2px #0424534f;
@@ -708,21 +705,17 @@ ul {
 
 .main .education .container .self-taught {
   position: relative;
-  margin-top: 30px;
+  margin-top: 24px;
   padding: 10px 10px;
   border: 1px solid #ccc;
   border-left: none;
   border-right: none;
 }
 
-.main .education .container .self-taught strong {
-  color: #ff4107;
-}
-
 .main .education .container .self-taught p {
   font-size: 1.4rem;
-  color: #042453;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  color: #021e82;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 .main .education .container .personal {
@@ -740,10 +733,6 @@ ul {
   padding: 50px;
   position: relative;
   z-index: 20;
-}
-
-.main .contact h2 {
-  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 700px) {
