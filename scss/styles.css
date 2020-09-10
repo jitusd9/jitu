@@ -472,6 +472,13 @@ ul {
           box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1) inset;
 }
 
+@media (max-width: 480px) {
+  .main .portfolio {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
 .main .portfolio .container {
   padding: 50px 0;
 }
