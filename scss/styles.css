@@ -377,23 +377,70 @@ ul {
   background: #fff;
 }
 
+@-webkit-keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .highlight {
+  height: 100vh;
+  width: 100%;
   z-index: 100;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   font-size: 1.5rem;
-  color: #665b5b;
-  background: #2d2d2d;
+  background: rgba(255, 255, 255, 0.9);
   text-align: center;
   padding: 0px 5px;
   border-radius: 5px;
 }
 
-.highlight span {
-  color: #dc7b01;
+.highlight h1 {
+  color: #551400;
+  font-weight: bold;
+  font-size: 5rem;
+  position: fixed;
+  padding: 10px 20px;
+  background: #ffd902;
+  -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  line-height: 5rem;
+}
+
+.highlight h1 span {
+  color: #10a503;
+  font-size: 3rem;
+  padding: 10px 20px;
+  -webkit-animation: blink 1.2s infinite linear alternate;
+          animation: blink 1.2s infinite linear alternate;
+}
+
+@media screen and (max-width: 800px) {
+  .highlight h1 span {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .highlight h1 {
+    font-size: 2.1rem;
+  }
 }
 
 .main {
