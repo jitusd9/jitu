@@ -28,6 +28,27 @@ ul {
 
 $shade: rgba(0, 0, 0, 0.2);
 
+.brand{
+	position: fixed;
+	z-index: 50;
+	top: 16px;
+	left: 16px;
+	padding: 0 20px;
+	border-radius: 2px;
+	@media (max-width: 700px) {
+		height: 40px;
+		width: auto;
+		right: 16px;
+		top: 16px;
+	}
+	h1{
+		color: #fff;
+		span{
+			color: #808080;
+		}
+	}
+}
+
 .background {
 	position: absolute;
 	height: 100%;
@@ -350,10 +371,13 @@ $shade: rgba(0, 0, 0, 0.2);
 			h2 {
 				font-size: 3rem;
 				margin: 20px;
-				color: #fff;
+				color: #808080;
 				margin-left: 20px;
 				line-height: 0;
 				text-transform: uppercase;
+				span{
+					color: #00ff95;
+				}
 				@media (max-width: 700px) {
 					font-size: 2rem;
 				}
@@ -366,6 +390,9 @@ $shade: rgba(0, 0, 0, 0.2);
 				color: #fff;
 				font-weight: bold;
 				text-shadow: 0 5px 10px $shade;
+				span{
+					color: #747474;
+				}
 				@media (max-width: 700px) {
 					font-size: 4rem;
 				}
@@ -396,7 +423,7 @@ $shade: rgba(0, 0, 0, 0.2);
 		margin: 0 auto;
 		border-radius: 10px;
 		box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1) inset;
-
+		top: -140px;
 		@media (max-width: 480px) {
 			width: 100%;
 			border-radius: 0;
