@@ -396,12 +396,12 @@ ul {
 }
 
 .highlight {
+  display: none;
   height: 100vh;
   width: 100%;
   z-index: 100;
   position: fixed;
   font-size: 1.5rem;
-  background: rgba(255, 255, 255, 0.9);
   text-align: center;
   padding: 0px 5px;
   border-radius: 5px;
@@ -494,7 +494,6 @@ ul {
   font-size: 7rem;
   color: #fff;
   font-weight: bold;
-  text-transform: uppercase;
   text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
