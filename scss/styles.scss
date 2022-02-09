@@ -36,10 +36,14 @@ $shade: rgba(0, 0, 0, 0.2);
 	padding: 0 20px;
 	border-radius: 2px;
 	@media (max-width: 700px) {
-		height: 40px;
-		width: auto;
-		right: 16px;
-		top: 16px;
+		left: 0px;
+	}
+	img{
+		@media (max-width: 700px) {
+			height: 40px;
+			width: 40px;
+			left: 0px;
+		}
 	}
 	h1{
 		color: #fff;

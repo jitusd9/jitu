@@ -40,10 +40,15 @@ ul {
 
 @media (max-width: 700px) {
   .brand {
+    left: 0px;
+  }
+}
+
+@media (max-width: 700px) {
+  .brand img {
     height: 40px;
-    width: auto;
-    right: 16px;
-    top: 16px;
+    width: 40px;
+    left: 0px;
   }
 }
 
