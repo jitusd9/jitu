@@ -24,6 +24,11 @@ ul {
 	font-weight: bold;
 	text-transform: uppercase;
 	text-shadow: 5px 5px 0 rgba(0, 60, 255, 0.7);
+
+	@media (max-width: 700px) {
+		text-shadow: 2px 2px 0 rgba(0, 60, 255, 0.7);
+		letter-spacing: 2px;
+	}
 }
 
 $shade: rgba(0, 0, 0, 0.2);
@@ -116,9 +121,7 @@ $shade: rgba(0, 0, 0, 0.2);
 	.symbols {
 		position: relative;
 		z-index: 10;
-		@media (max-width: 700px) {
-			display: none;
-		}
+		
 		p {
 			font-size: 4rem;
 			color: #fff;
@@ -148,30 +151,38 @@ $shade: rgba(0, 0, 0, 0.2);
 			left: -400px;
 			transform: rotate(-20deg);
 		}
+		@media (max-width: 700px) {
+			display: none;
+		}
 	}
 }
 
 // navigation css----------------
+
 .nav {
 	height: 100vh;
 	width: 100%;
 	background: linear-gradient(
 		45deg,
-		rgba(2, 19, 112, 0.9),
-		rgba(2, 255, 234, 0.9)
+		rgba(2, 19, 112, 0.7),
+		rgba(2, 255, 234, 0.7)
 	);
+	backdrop-filter: blur(10px);
 	position: fixed;
 	z-index: 40;
 	display: grid;
 	justify-content: center;
 	align-items: center;
-	transform: translateY(-120%) scale(0);
-	opacity: 0;
-	transition: all 0.5s ease;
+	transform: translateY(-120%);
+	opacity: 1;
+	transition: all .5s ease-in-out;
+	@media (max-width: 700px) {
+		background: rgba(255, 255, 255, 0.6);
+	}
 }
 
 .nav.expanded {
-	transform: translateY(0%) scale(1);
+	transform: translateY(0%);
 	opacity: 1;
 }
 
@@ -260,7 +271,7 @@ $shade: rgba(0, 0, 0, 0.2);
 	top: 50%;
 	transform: translateY(-50%);
 	transition: all 0.5s ease;
-	background: #00ff95;
+	background: #fff;
 	content: "";
 	height: 0.4rem;
 	width: 100%;
@@ -375,7 +386,7 @@ $shade: rgba(0, 0, 0, 0.2);
 			h2 {
 				font-size: 3rem;
 				margin: 20px;
-				color: #808080;
+				color: #ffffff;
 				margin-left: 20px;
 				line-height: 0;
 				text-transform: uppercase;
@@ -388,6 +399,7 @@ $shade: rgba(0, 0, 0, 0.2);
 				@media (max-width: 480px) {
 					font-size: 1.5rem;
 				}
+				text-align: center;
 			}
 			h1 {
 				font-size: 7rem;
@@ -431,6 +443,7 @@ $shade: rgba(0, 0, 0, 0.2);
 		@media (max-width: 480px) {
 			width: 100%;
 			border-radius: 0;
+			top: 0;
 		}
 
 		.container {
@@ -460,30 +473,7 @@ $shade: rgba(0, 0, 0, 0.2);
 						box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 
 						transform-style: preserve-3d;
-						&:hover {
-							background: linear-gradient(45deg, #8c00ff, #00ffff);
-							.card-title {
-								color: #fff;
-								transform: translateZ(15px);
-								@media (max-width: 700px) {
-									transform: none;
-								}
-							}
-							.card-text {
-								color: #eee;
-								transform: translateZ(10px);
-								@media (max-width: 700px) {
-									transform: none;
-								}
-							}
-							img {
-								transform: translateZ(30px);
-								box-shadow: 0px 20px 10px -10px $shade;
-								@media (max-width: 700px) {
-									transform: none;
-								}
-							}
-						}
+						
 						.card-title {
 							color: #00ac64;
 							transition: all 0.3s;
@@ -517,6 +507,32 @@ $shade: rgba(0, 0, 0, 0.2);
 								transform: none;
 							}
 						}
+						
+						&:hover {
+							background: linear-gradient(45deg, #8c00ff, #00ffff);
+							.card-title {
+								color: #fff;
+								transform: translateZ(15px);
+								@media (max-width: 700px) {
+									transform: none;
+								}
+							}
+							.card-text {
+								color: #eee;
+								transform: translateZ(10px);
+								@media (max-width: 700px) {
+									transform: none;
+								}
+							}
+							img {
+								transform: translateZ(30px);
+								box-shadow: 0px 20px 10px -10px $shade;
+								@media (max-width: 700px) {
+									transform: none;
+								}
+							}
+						}
+						
 						@media (max-width: 700px) {
 							transform: none;
 							transform-style: unset;
@@ -537,7 +553,7 @@ $shade: rgba(0, 0, 0, 0.2);
 		justify-content: center;
 		align-items: center;
 		.container {
-			padding: 50px 0;
+			padding: 30px;
 			border: 10px solid #fff;
 			background:linear-gradient(rgba(255, 255, 255, 0.6),rgba(255, 255, 255, 0.6)), url("../img/tic-tac-toe.png");
 			box-shadow: 0 30px 20px -15px rgba(0, 0, 0, 0.1),
@@ -546,33 +562,67 @@ $shade: rgba(0, 0, 0, 0.2);
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			flex-direction: column;
+
+			perspective: 1000px;
+			// transform-style: preserve-3d;
 			@media (max-width: 700px) {
 				padding: 10px;
 				width: 100vw;
+				flex-direction: column;
+			}
+			.photo{
+				width: 350px;
+				border: none;
+				padding: 10px;
+				border-radius: 2px;
+				box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+				transform-style: preserve-3d;
+				img{
+					width: 100%;
+					transition: all 0.3s;
+					transition: translateZ(0px);
+				}
+				&:hover {
+					background: linear-gradient(45deg, #8c00ff, #00ffff);
+					@media (max-width: 700px) {
+						background: #fff;
+					}
+					img {
+						transform: translateZ(30px);
+						box-shadow: 0px 20px 10px -10px $shade;
+						@media (max-width: 700px) {
+							transform: none;
+
+						}
+					}
+				}
 			}
 			h2 {
 				// font-size: 3rem;
 				// text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 				@media (max-width: 700px) {
+					text-shadow: none;
+					color: #747474;
+					letter-spacing: 0;
+					text-transform: none;
 					font-size: 2.5rem;
+					margin-top: 20px;
 				}
 			}
 			.skills {
 				position: relative;
 				margin-top: 30px;
-
 				li {
 					display: inline-block;
 					padding: 5px;
-					color: #0679ef;
-					font-weight: bold;
-					font-size: 1.3rem;
-					text-shadow: 0 0 2px #0424534f;
+					img{
+						height: 40px;
+						width: auto;
+					}
 				}
 				@media (max-width: 700px) {
 					li {
-						display: block;
+						// display: block;
 						text-align: center;
 					}
 					.middot {
@@ -590,7 +640,7 @@ $shade: rgba(0, 0, 0, 0.2);
 				
 				p {
 					font-size: 1.4rem;
-					color: #021e82;
+					color: #38313f;
 					text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 				}
 			}

@@ -29,6 +29,13 @@ ul {
   text-shadow: 5px 5px 0 rgba(0, 60, 255, 0.7);
 }
 
+@media (max-width: 700px) {
+  .sub-head {
+    text-shadow: 2px 2px 0 rgba(0, 60, 255, 0.7);
+    letter-spacing: 2px;
+  }
+}
+
 .brand {
   position: fixed;
   z-index: 50;
@@ -164,12 +171,6 @@ ul {
   z-index: 10;
 }
 
-@media (max-width: 700px) {
-  .background .symbols {
-    display: none;
-  }
-}
-
 .background .symbols p {
   font-size: 4rem;
   color: #fff;
@@ -209,10 +210,18 @@ ul {
           transform: rotate(-20deg);
 }
 
+@media (max-width: 700px) {
+  .background .symbols {
+    display: none;
+  }
+}
+
 .nav {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(45deg, rgba(2, 19, 112, 0.9), rgba(2, 255, 234, 0.9));
+  background: linear-gradient(45deg, rgba(2, 19, 112, 0.7), rgba(2, 255, 234, 0.7));
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   position: fixed;
   z-index: 40;
   display: -ms-grid;
@@ -223,16 +232,22 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transform: translateY(-120%) scale(0);
-          transform: translateY(-120%) scale(0);
-  opacity: 0;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transform: translateY(-120%);
+          transform: translateY(-120%);
+  opacity: 1;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    background: rgba(255, 255, 255, 0.6);
+  }
 }
 
 .nav.expanded {
-  -webkit-transform: translateY(0%) scale(1);
-          transform: translateY(0%) scale(1);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
   opacity: 1;
 }
 
@@ -349,7 +364,7 @@ ul {
           transform: translateY(-50%);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  background: #00ff95;
+  background: #fff;
   content: "";
   height: 0.4rem;
   width: 100%;
@@ -503,10 +518,11 @@ ul {
 .main .welcome .name h2 {
   font-size: 3rem;
   margin: 20px;
-  color: #808080;
+  color: #ffffff;
   margin-left: 20px;
   line-height: 0;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .main .welcome .name h2 span {
@@ -581,6 +597,7 @@ ul {
   .main .portfolio {
     width: 100%;
     border-radius: 0;
+    top: 0;
   }
 }
 
@@ -628,50 +645,6 @@ ul {
           box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-}
-
-.main .portfolio .container .gallary .card-box .card:hover {
-  background: linear-gradient(45deg, #8c00ff, #00ffff);
-}
-
-.main .portfolio .container .gallary .card-box .card:hover .card-title {
-  color: #fff;
-  -webkit-transform: translateZ(15px);
-          transform: translateZ(15px);
-}
-
-@media (max-width: 700px) {
-  .main .portfolio .container .gallary .card-box .card:hover .card-title {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-.main .portfolio .container .gallary .card-box .card:hover .card-text {
-  color: #eee;
-  -webkit-transform: translateZ(10px);
-          transform: translateZ(10px);
-}
-
-@media (max-width: 700px) {
-  .main .portfolio .container .gallary .card-box .card:hover .card-text {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-.main .portfolio .container .gallary .card-box .card:hover img {
-  -webkit-transform: translateZ(30px);
-          transform: translateZ(30px);
-  -webkit-box-shadow: 0px 20px 10px -10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 20px 10px -10px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 700px) {
-  .main .portfolio .container .gallary .card-box .card:hover img {
-    -webkit-transform: none;
-            transform: none;
-  }
 }
 
 .main .portfolio .container .gallary .card-box .card .card-title {
@@ -726,6 +699,50 @@ ul {
   }
 }
 
+.main .portfolio .container .gallary .card-box .card:hover {
+  background: linear-gradient(45deg, #8c00ff, #00ffff);
+}
+
+.main .portfolio .container .gallary .card-box .card:hover .card-title {
+  color: #fff;
+  -webkit-transform: translateZ(15px);
+          transform: translateZ(15px);
+}
+
+@media (max-width: 700px) {
+  .main .portfolio .container .gallary .card-box .card:hover .card-title {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.main .portfolio .container .gallary .card-box .card:hover .card-text {
+  color: #eee;
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
+}
+
+@media (max-width: 700px) {
+  .main .portfolio .container .gallary .card-box .card:hover .card-text {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.main .portfolio .container .gallary .card-box .card:hover img {
+  -webkit-transform: translateZ(30px);
+          transform: translateZ(30px);
+  -webkit-box-shadow: 0px 20px 10px -10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 20px 10px -10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 700px) {
+  .main .portfolio .container .gallary .card-box .card:hover img {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
 @media (max-width: 700px) {
   .main .portfolio .container .gallary .card-box .card {
     -webkit-transform: none;
@@ -756,7 +773,7 @@ ul {
 }
 
 .main .education .container {
-  padding: 50px 0;
+  padding: 30px;
   border: 10px solid #fff;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url("../img/tic-tac-toe.png");
   background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/tic-tac-toe.png");
@@ -772,22 +789,72 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 @media (max-width: 700px) {
   .main .education .container {
     padding: 10px;
     width: 100vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.main .education .container .photo {
+  width: 350px;
+  border: none;
+  padding: 10px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.main .education .container .photo img {
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transition: translateZ(0px);
+  transition: translateZ(0px);
+}
+
+.main .education .container .photo:hover {
+  background: linear-gradient(45deg, #8c00ff, #00ffff);
+}
+
+@media (max-width: 700px) {
+  .main .education .container .photo:hover {
+    background: #fff;
+  }
+}
+
+.main .education .container .photo:hover img {
+  -webkit-transform: translateZ(30px);
+          transform: translateZ(30px);
+  -webkit-box-shadow: 0px 20px 10px -10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 20px 10px -10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 700px) {
+  .main .education .container .photo:hover img {
+    -webkit-transform: none;
+            transform: none;
   }
 }
 
 @media (max-width: 700px) {
   .main .education .container h2 {
+    text-shadow: none;
+    color: #747474;
+    letter-spacing: 0;
+    text-transform: none;
     font-size: 2.5rem;
+    margin-top: 20px;
   }
 }
 
@@ -799,15 +866,15 @@ ul {
 .main .education .container .skills li {
   display: inline-block;
   padding: 5px;
-  color: #0679ef;
-  font-weight: bold;
-  font-size: 1.3rem;
-  text-shadow: 0 0 2px #0424534f;
+}
+
+.main .education .container .skills li img {
+  height: 40px;
+  width: auto;
 }
 
 @media (max-width: 700px) {
   .main .education .container .skills li {
-    display: block;
     text-align: center;
   }
   .main .education .container .skills .middot {
@@ -826,7 +893,7 @@ ul {
 
 .main .education .container .self-taught p {
   font-size: 1.4rem;
-  color: #021e82;
+  color: #38313f;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
