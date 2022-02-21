@@ -66,6 +66,8 @@ $shade: rgba(0, 0, 0, 0.2);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transform-style: preserve-3d;
+	perspective: 500px;
 	.code_bg {
 		position: absolute;
 		height: 100vh;
@@ -114,10 +116,10 @@ $shade: rgba(0, 0, 0, 0.2);
 	}
 	@keyframes rotate_it {
 		from {
-			transform: rotate(-20deg);
+			transform: rotate(0deg);
 		}
 		to {
-			transform: rotate(20deg);
+			transform: rotate(360deg);
 		}
 	}
 	.symbols {
@@ -436,7 +438,7 @@ $shade: rgba(0, 0, 0, 0.2);
 				font-weight: bold;
 				text-shadow: 0 5px 10px $shade;
 				span{
-					color: #747474;
+					color: #ffffff;
 				}
 				@media (max-width: 700px) {
 					font-size: 4rem;
@@ -446,13 +448,14 @@ $shade: rgba(0, 0, 0, 0.2);
 				}
 			}
 			p {
-				font-size: 2rem;
+				font-size: 3rem;
 				color: #ffffff;
+				font-family: 'Reenie Beanie', cursive;
 				@media (max-width: 700px) {
-					font-size: 1.5rem;
+					font-size: 2rem;
 				}
 				@media (max-width: 400px) {
-					font-size: 1.2rem;
+					font-size: 1.5rem;
 				}
 			}
 			.sub-title{
@@ -690,13 +693,19 @@ $shade: rgba(0, 0, 0, 0.2);
 				display: flex;
 				align-items: center;
 				p {
-					font-family: 'Noto Sans Mono', monospace;
+					display: inline-block;
+					// font-family: 'Noto Sans Mono', monospace;
 					// font-family: 'Merriweather', monospace;
+					font-family: 'Nunito', sans-serif;
 					line-height: 3rem;
 					letter-spacing: -0.5px;
 					font-size: 1.6rem;
 					color: #38313f;
-					margin-left: 10px;
+					margin: 10px;
+					strong{
+						padding: 0 5px;
+						background: #ffc014;
+					}
 				}
 				.photo{
 					width: 100%;
@@ -738,6 +747,24 @@ $shade: rgba(0, 0, 0, 0.2);
 			.personal {
 				position: relative;
 				margin-top: 30px;
+				.resume{
+					width: 350px;
+					margin: 1rem auto;
+					padding: 16px 40px;
+					background: #ffc014;
+					border-radius: 12px;
+					font-size: 2rem;
+					box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+					a{
+						font-size: 1.6rem;
+						font-weight: bold;
+						text-transform: uppercase;
+						color: rgb(0, 0, 0);
+						text-shadow: 0 3px 0px rgba(0, 0, 0, 0.2);
+						text-decoration: none;
+						transition: all 0.3s;
+					}
+				}
 				h4{
 					color: #042453b9;
 					text-align: center;
@@ -761,7 +788,7 @@ $shade: rgba(0, 0, 0, 0.2);
 							background: linear-gradient(24deg, rgb(255, 211, 117), rgb(151, 255, 120));
 						}
 						&:nth-child(3){
-							background: linear-gradient(24deg, rgb(219, 102, 255), rgb(240, 255, 29));
+							background: linear-gradient(24deg, rgb(95, 227, 236), rgb(240, 255, 29));
 						}
 						&:nth-child(4){
 							background: linear-gradient(24deg, rgb(131, 170, 255), rgb(255, 163, 120));

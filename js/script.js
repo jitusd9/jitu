@@ -13,3 +13,13 @@
 
 	menuBtn.addEventListener("click", toggleMenu);
 })();
+
+const resume = document.querySelector('#resume');
+
+resume.addEventListener('mouseover', () => {
+	resume.querySelector('a').innerHTML = 'preview 📄';
+});
+
+resume.addEventListener('mouseout', () => {
+	resume.querySelector('a').innerHTML = 'resume 📄';
+});
