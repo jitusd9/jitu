@@ -51,6 +51,11 @@ ul {
   }
 }
 
+.brand img {
+  height: 60px;
+  width: 60px;
+}
+
 @media (max-width: 700px) {
   .brand img {
     height: 40px;
