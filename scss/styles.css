@@ -41,7 +41,7 @@ ul {
   z-index: 50;
   top: 16px;
   left: 16px;
-  padding: 0 20px;
+  padding: 0 16px;
   border-radius: 2px;
 }
 
@@ -80,10 +80,32 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-perspective: 500px;
-          perspective: 500px;
+  background: #232425;
+  overflow-x: hidden;
+}
+
+.background img {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 40%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (max-width: 700px) {
+  .background img {
+    top: 8%;
+    left: 8.5%;
+    width: 150%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .background img:nth-child(2) {
+    top: 85%;
+    left: 100%;
+    width: 100%;
+  }
 }
 
 .background .code_bg {
@@ -110,21 +132,6 @@ ul {
   width: 110%;
   -webkit-filter: blur(5px);
           filter: blur(5px);
-}
-
-.background .code_bg img {
-  position: absolute;
-  height: auto;
-  width: 100vw;
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-}
-
-@media (max-width: 700px) {
-  .background .code_bg img {
-    height: 100vh;
-    width: auto;
-  }
 }
 
 .background .circle {
@@ -364,9 +371,9 @@ ul {
           user-select: none;
   cursor: pointer;
   height: 30px;
-  right: 4rem;
   position: fixed;
   top: 2rem;
+  right: 4rem;
   width: 50px;
   z-index: 50;
 }
@@ -375,7 +382,7 @@ ul {
   .nav-toggle {
     height: 40px;
     width: 40px;
-    right: 16px;
+    left: calc(100vw - 4rem);
     top: 16px;
   }
 }
@@ -525,6 +532,10 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -537,7 +548,20 @@ ul {
 }
 
 .main .welcome .name {
-  position: fixed;
+  position: relative;
+  padding: 20px 40px;
+  background: radial-gradient(farthest-side at 50% 20%, #ffffff6e, #ec034400), linear-gradient(25deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+  .main .welcome .name {
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+  }
 }
 
 .main .welcome .name h2 {
@@ -546,7 +570,8 @@ ul {
   color: #ffffff;
   margin-left: 20px;
   line-height: 0;
-  text-transform: uppercase;
+  font-family: 'Reenie Beanie', cursive;
+  text-shadow: 0 5px 0px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
@@ -556,13 +581,13 @@ ul {
 
 @media (max-width: 700px) {
   .main .welcome .name h2 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 
 @media (max-width: 480px) {
   .main .welcome .name h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -570,7 +595,7 @@ ul {
   font-size: 7rem;
   color: #fff;
   font-weight: bold;
-  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .main .welcome .name h1 span {
@@ -579,31 +604,33 @@ ul {
 
 @media (max-width: 700px) {
   .main .welcome .name h1 {
-    font-size: 4rem;
+    font-size: 4.2rem;
+    text-shadow: 0 8px 0px rgba(0, 0, 0, 0.2);
   }
 }
 
 @media (max-width: 400px) {
   .main .welcome .name h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
 
 .main .welcome .name p {
   font-size: 3rem;
-  color: #ffffff;
+  color: #fff;
   font-family: 'Reenie Beanie', cursive;
+  text-shadow: 0 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 700px) {
   .main .welcome .name p {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 
 @media (max-width: 400px) {
   .main .welcome .name p {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -612,6 +639,28 @@ ul {
   text-align: right;
   color: #00ff95;
   letter-spacing: 1px;
+}
+
+.main .welcome .down-arrow {
+  font-size: 3rem;
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .main .portfolio {
