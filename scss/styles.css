@@ -3,8 +3,6 @@ html {
 }
 
 body {
-  background: linear-gradient(-45deg, #00ffdd, #00a2ff) center center/cover no-repeat;
-  background: #2e4058;
   background: #f8f8f8;
   overflow-x: hidden;
 }
@@ -86,6 +84,8 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   background: #232425;
+  background: -webkit-gradient(linear, left bottom, left top, from(#060229), to(#000000));
+  background: linear-gradient(0deg, #060229, #000000);
   overflow-x: hidden;
 }
 

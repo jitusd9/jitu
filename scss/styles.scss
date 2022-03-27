@@ -2,9 +2,8 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	background: linear-gradient(-45deg, #00ffdd, rgb(0, 162, 255)) center center /
-		cover no-repeat;
-	background: #2e4058;
+	// background: linear-gradient(-45deg, #00ffdd, rgb(0, 162, 255)) center center /
+	// 	cover no-repeat;
 	background: #f8f8f8;
 	overflow-x: hidden;
 }
@@ -69,6 +68,7 @@ $shade: rgba(0, 0, 0, 0.2);
 	justify-content: center;
 	align-items: center;
 	background: #232425;
+	background: linear-gradient(0deg, #060229, #000000);
 	overflow-x: hidden;
 	img {
 		position: absolute;
