@@ -69,6 +69,7 @@ $shade: rgba(0, 0, 0, 0.2);
 	align-items: center;
 	background: #232425;
 	background: linear-gradient(0deg, #060229, #000000);
+	background: url(../img/SVG/background.svg) center center /cover no-repeat;
 	overflow-x: hidden;
 	img {
 		position: absolute;
@@ -313,6 +314,7 @@ $shade: rgba(0, 0, 0, 0.2);
 	transform: translateY(-50%);
 	transition: all 0.5s ease;
 	background: #ff6a60;
+	background: #3d3d3d;
 	content: "";
 	height: 0.4rem;
 	width: 100%;
@@ -430,9 +432,10 @@ $shade: rgba(0, 0, 0, 0.2);
 			// background: radial-gradient(farthest-side at 50% 0%, #01adff, #ec034400),
 			// linear-gradient(25deg, #f00, #00f);
 			background: radial-gradient(farthest-side at 50% 20%, #ffffff6e, #ec034400),
-			linear-gradient(25deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+			linear-gradient(25deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 			backdrop-filter: blur(5px);
 			border-radius: 10px;
+			border-bottom: 2px solid #eee;
 			@media (max-width: 700px) {
 				width: 90%;
 				padding: 10px;
@@ -495,15 +498,45 @@ $shade: rgba(0, 0, 0, 0.2);
 			}
 		}
 		.down-arrow{
-			font-size: 3rem;
-			// animation: arrow 0.8s infinite alternate linear;
+			position: relative;
+			margin-top: 50px;
+			height: 0px;
+			width: 0px;
+			background-color: transparent;
+			border-top: 50px solid rgba(255, 255, 255, 0.2);
+			border-bottom: 50px solid transparent;
+			border-left: 50px solid transparent;
+			border-right: 50px solid transparent;
+			animation: arrow 1s 0.5s infinite alternate linear;
+			&::after{
+				position: absolute;
+				top: -62px;
+				left: -50px;
+				content: "";
+				height: 6px;
+				width: 100px;
+				background-color: rgba(255, 255, 255, 0.2);
+				animation: arrowDash 1s infinite alternate linear;
+			}
 		}
 		@keyframes arrow {
 			0%{
 				opacity: 0;
+				border-top-color: rgba(255, 255, 255, 0.2);
 			}
 			100%{
 				opacity: 1;
+				border-top-color: rgba(255, 255, 255, 0.7);
+			}
+		}
+		@keyframes arrowDash {
+			0%{
+				opacity: 0;
+				background-color: rgba(255, 255, 255, 0.2);
+			}
+			100%{
+				opacity: 1;
+				background-color: rgba(255, 255, 255, 0.7);
 			}
 		}
 	}
@@ -543,6 +576,10 @@ $shade: rgba(0, 0, 0, 0.2);
 					font-size: 2.5rem;
 					text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 				}
+			}
+			p{
+				text-align: center;
+				color: #fefefe;
 			}
 			.gallary {
 				display: grid;

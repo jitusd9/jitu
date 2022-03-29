@@ -86,6 +86,7 @@ ul {
   background: #232425;
   background: -webkit-gradient(linear, left bottom, left top, from(#060229), to(#000000));
   background: linear-gradient(0deg, #060229, #000000);
+  background: url(../img/SVG/background.svg) center center/cover no-repeat;
   overflow-x: hidden;
 }
 
@@ -402,6 +403,7 @@ ul {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   background: #ff6a60;
+  background: #3d3d3d;
   content: "";
   height: 0.4rem;
   width: 100%;
@@ -555,10 +557,11 @@ ul {
 .main .welcome .name {
   position: relative;
   padding: 20px 40px;
-  background: radial-gradient(farthest-side at 50% 20%, #ffffff6e, #ec034400), linear-gradient(25deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  background: radial-gradient(farthest-side at 50% 20%, #ffffff6e, #ec034400), linear-gradient(25deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   border-radius: 10px;
+  border-bottom: 2px solid #eee;
 }
 
 @media (max-width: 700px) {
@@ -647,24 +650,72 @@ ul {
 }
 
 .main .welcome .down-arrow {
-  font-size: 3rem;
+  position: relative;
+  margin-top: 50px;
+  height: 0px;
+  width: 0px;
+  background-color: transparent;
+  border-top: 50px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  -webkit-animation: arrow 1s 0.5s infinite alternate linear;
+          animation: arrow 1s 0.5s infinite alternate linear;
+}
+
+.main .welcome .down-arrow::after {
+  position: absolute;
+  top: -62px;
+  left: -50px;
+  content: "";
+  height: 6px;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-animation: arrowDash 1s infinite alternate linear;
+          animation: arrowDash 1s infinite alternate linear;
 }
 
 @-webkit-keyframes arrow {
   0% {
     opacity: 0;
+    border-top-color: rgba(255, 255, 255, 0.2);
   }
   100% {
     opacity: 1;
+    border-top-color: rgba(255, 255, 255, 0.7);
   }
 }
 
 @keyframes arrow {
   0% {
     opacity: 0;
+    border-top-color: rgba(255, 255, 255, 0.2);
   }
   100% {
     opacity: 1;
+    border-top-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@-webkit-keyframes arrowDash {
+  0% {
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@keyframes arrowDash {
+  0% {
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.7);
   }
 }
 
@@ -711,6 +762,11 @@ ul {
     font-size: 2.5rem;
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   }
+}
+
+.main .portfolio .container p {
+  text-align: center;
+  color: #fefefe;
 }
 
 .main .portfolio .container .gallary {
