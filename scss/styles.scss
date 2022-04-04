@@ -503,18 +503,18 @@ $shade: rgba(0, 0, 0, 0.2);
 			height: 0px;
 			width: 0px;
 			background-color: transparent;
-			border-top: 50px solid rgba(255, 255, 255, 0.2);
-			border-bottom: 50px solid transparent;
-			border-left: 50px solid transparent;
-			border-right: 50px solid transparent;
+			border-top: 40px solid rgba(255, 255, 255, 0.2);
+			border-bottom: 40px solid transparent;
+			border-left: 40px solid transparent;
+			border-right: 40px solid transparent;
 			animation: arrow 1s 0.5s infinite alternate linear;
 			&::after{
 				position: absolute;
-				top: -62px;
-				left: -50px;
+				top: -52px;
+				left: -40px;
 				content: "";
 				height: 6px;
-				width: 100px;
+				width: 80px;
 				background-color: rgba(255, 255, 255, 0.2);
 				animation: arrowDash 1s infinite alternate linear;
 			}
@@ -545,7 +545,7 @@ $shade: rgba(0, 0, 0, 0.2);
 		position: relative;
 		z-index: 20;
 		// background: url(../img/random_grey_variations_@2X.png);
-		background: #f8f8f8;
+		// background: #f8f8f8;
 		background: radial-gradient(farthest-side at 50% 0%, #79fbff, transparent),
 		linear-gradient(25deg, rgb(255, 126, 126), rgb(136, 136, 255));
 		width: 80%;
@@ -559,6 +559,7 @@ $shade: rgba(0, 0, 0, 0.2);
 		}
 
 		.container {
+			position: relative;
 			padding: 50px 0;
 			@media (max-width: 700px){
 				padding: 20px 0;
@@ -581,6 +582,19 @@ $shade: rgba(0, 0, 0, 0.2);
 				text-align: center;
 				color: #fefefe;
 			}
+
+			.btn-more{
+				position: relative;
+				bottom: 0px;
+				left: 50%;
+				transform: translate(-50% ,0%);
+				width: 100px;
+				color: #fff;
+				background-color: #2b2b2b;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+
 			.gallary {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -613,12 +627,11 @@ $shade: rgba(0, 0, 0, 0.2);
 						}
 						.btn {
 							border: none;
-							transform: translateZ(15px);
+							// transform: translateZ(15px);
 							box-shadow: 0 5px 5px $shade;
 							transition: all 0.3s;
 							&:hover {
-								box-shadow: 0 10px 5px $shade;
-								transform: translateY(-6px) translateZ(30px);
+								box-shadow: 0 10px 10px $shade;
 							}
 						}
 						.btn-secondary {
@@ -675,6 +688,7 @@ $shade: rgba(0, 0, 0, 0.2);
 					@media (max-width: 700px) {
 						width: 90%;
 					}
+
 				}
 			}
 		}
@@ -781,17 +795,17 @@ $shade: rgba(0, 0, 0, 0.2);
 					margin: 10px;
 					strong{
 						padding: 0 5px;
-						background: #ffc014;
+						background-color: #ffc014;
 					}
 				}
 				.photo{
-					width: 100%;
+					width: auto;
 					border: 10px solid #fff;
-					// padding: 10px;
+					height: 400px;
 					border-radius: 2px;
 					box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 					img{
-						width: 100%;
+						height: 100%;
 						transition: all 0.3s;
 						// transition: translateZ(0px);
 					}
@@ -857,18 +871,20 @@ $shade: rgba(0, 0, 0, 0.2);
 						width: 350px;
 						margin: 1rem auto;
 						padding: 16px 40px;
-						background: linear-gradient(24deg, rgb(183, 137, 255), rgb(255, 132, 132));
 						border-radius: 12px;
 						font-size: 2rem;
 						box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+						&:nth-child(1){
+							background: linear-gradient(24deg, rgb(96, 71, 134), rgba(255, 132, 132, 0)), url(../img/link-bg/blog.jpg) center center /cover no-repeat ;
+						}
 						&:nth-child(2){
-							background: linear-gradient(24deg, rgb(255, 211, 117), rgb(151, 255, 120));
+							background:linear-gradient(24deg, rgb(124, 103, 56), rgba(152, 255, 120, 0)), url(../img/link-bg/codepen.jpg) center center /cover no-repeat ;
 						}
 						&:nth-child(3){
-							background: linear-gradient(24deg, rgb(95, 227, 236), rgb(240, 255, 29));
+							background: linear-gradient(24deg, rgb(55, 132, 138), rgba(240, 255, 29, 0)), url(../img/link-bg/github.jpg) center center /cover no-repeat ;
 						}
 						&:nth-child(4){
-							background: linear-gradient(24deg, rgb(131, 170, 255), rgb(255, 163, 120));
+							background: linear-gradient(24deg, rgb(59, 78, 119), rgba(255, 163, 120, 0)), url(../img/link-bg/photos.jpg) center center /cover no-repeat ;
 						}
 						@media (max-width: 700px){
 							width: calc(100% - 10px);
@@ -877,7 +893,7 @@ $shade: rgba(0, 0, 0, 0.2);
 							font-size: 1.6rem;
 							font-weight: bold;
 							text-transform: uppercase;
-							color: rgb(0, 0, 0);
+							color: rgb(255, 255, 255);
 							text-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 							text-decoration: none;
 							transition: all 0.3s;
