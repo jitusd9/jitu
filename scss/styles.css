@@ -1288,4 +1288,51 @@ ul {
 .main .contact li a:hover {
   color: #fe3503;
 }
+
+@-webkit-keyframes shakeButton {
+  from {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  to {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+@keyframes shakeButton {
+  from {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  to {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+.main .contact #coffeeBtn {
+  pointer-events: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.main .contact #coffeeBtn img {
+  background: #fff;
+  padding: 10px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 8px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+.main .contact #coffeeBtn.shake {
+  -webkit-animation: shakeButton 0.1s infinite alternate linear;
+          animation: shakeButton 0.1s infinite alternate linear;
+}
 /*# sourceMappingURL=styles.css.map */

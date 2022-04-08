@@ -281,19 +281,17 @@
 							</a>
 						</li>
 
-						<!-- <li>
-							<a target="_blank" href="">
-								💻
-								<span>LinkedIn</span>
-							</a>
-						</li> -->
+						
 						<li>
 							<a href="mailto:jsd.professional@gmail.com">
 								<img src="./img/SVG/gmail.svg" alt="twitter-icon" loading="lazy">
 								<span>Email</span>
 							</a>
 						</li>
+						
 					</ul>
+					
+					<a class="text-center" id="coffeeBtn" href="https://www.buymeacoffee.com/jitusd" target="_blank"><img src="./img/SVG/bmc-logo.svg" alt="buy me a coffee" ></a>
 				</div>
 			</div>
 		</section>
@@ -301,5 +299,33 @@
 		<script src="js/script.js"></script>
 		<!-- <script src="js/parallax.js"></script> -->
 		<script src="js/3dcard.js"></script>
+
+		<!-- ----------- buy me a coffee button -----------------  -->
+		<script>
+		const coffeeBtn = document.querySelector('#coffeeBtn');
+
+		window.addEventListener('scroll', (e)=> {
+
+			if(window.scrollY > 800){
+				let calcOpacity = window.scrollY / 2000;
+				
+				coffeeBtn.style.opacity = calcOpacity;
+				if(calcOpacity > 0.5){
+					coffeeBtn.style.pointerEvents = "all";
+				}else{
+					coffeeBtn.style.pointerEvents = "none";
+				}
+			}else{
+				coffeeBtn.style.opacity = 0;
+			}
+		});
+
+		
+		
+
+
+		</script>
+
+
 	</body>
 </html>

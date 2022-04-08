@@ -17,6 +17,7 @@ ul {
 	padding: 0;
 }
 
+
 .sub-head {
 	font-size: 4rem;
 	letter-spacing: 8px;
@@ -963,6 +964,34 @@ $shade: rgba(0, 0, 0, 0.2);
 					color: #fe3503;
 				}
 			}
+		}
+		@keyframes shakeButton {
+			from{
+				transform: rotate(5deg);
+			}
+			to{
+				transform: rotate(-5deg);
+			}
+		}
+		#coffeeBtn{
+			pointer-events: none;
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			transition: all 0.3s;
+			opacity: 0;
+			img{
+				background: #fff;
+				padding: 10px;
+				height: 60px;
+				width: 60px;
+				border-radius: 50%;
+				box-shadow: 0 8px 0px rgba(0, 0, 0, 0.1);
+			}
+			
+		}
+		#coffeeBtn.shake{
+			animation: shakeButton 0.1s infinite alternate linear;
 		}
 	}
 }

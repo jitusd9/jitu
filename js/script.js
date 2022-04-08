@@ -23,3 +23,6 @@ resume.addEventListener('mouseover', () => {
 resume.addEventListener('mouseout', () => {
 	resume.querySelector('a').innerHTML = 'resume 📄';
 });
+
+
+
