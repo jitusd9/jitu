@@ -857,8 +857,6 @@ ul {
 
 .main .portfolio .container .gallary .card-box .card video {
   border-radius: 10px;
-  -webkit-transform: translateZ(0px);
-          transform: translateZ(0px);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
