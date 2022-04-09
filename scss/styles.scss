@@ -562,6 +562,7 @@ $shade: rgba(0, 0, 0, 0.2);
 		.container {
 			position: relative;
 			padding: 50px 0;
+			box-shadow: 0 30px 20px -15px rgba(0, 0, 0, 0.1);
 			@media (max-width: 700px){
 				padding: 20px 0;
 			}
@@ -641,7 +642,7 @@ $shade: rgba(0, 0, 0, 0.2);
 						.btn-success {
 							background: linear-gradient(-45deg, #ff0707, #ff7b00);
 						}
-						img {
+						video {
 							border-radius: 10px;
 							transform: translateZ(0px);
 							transition: all 0.3s;
@@ -672,7 +673,7 @@ $shade: rgba(0, 0, 0, 0.2);
 									transform: none;
 								}
 							}
-							img {
+							video {
 								transform: translateZ(30px);
 								box-shadow: 0px 20px 10px -10px $shade;
 								@media (max-width: 700px) {
