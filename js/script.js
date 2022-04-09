@@ -25,5 +25,3 @@ resume.addEventListener('mouseout', () => {
 });
 
 
-
-
