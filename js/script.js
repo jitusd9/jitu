@@ -14,14 +14,14 @@
 	menuBtn.addEventListener("click", toggleMenu);
 })();
 
-const resume = document.querySelector('#resume');
+// const resume = document.querySelector('#resume');
 
-resume.addEventListener('mouseover', () => {
-	resume.querySelector('a').innerHTML = 'preview 📄';
-});
+// resume.addEventListener('mouseover', () => {
+// 	resume.querySelector('a').innerHTML = 'preview 📄';
+// });
 
-resume.addEventListener('mouseout', () => {
-	resume.querySelector('a').innerHTML = 'resume 📄';
-});
+// resume.addEventListener('mouseout', () => {
+// 	resume.querySelector('a').innerHTML = 'resume 📄';
+// });
 
 
