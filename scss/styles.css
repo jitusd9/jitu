@@ -561,7 +561,9 @@ ul {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   border-radius: 10px;
-  border-bottom: 2px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  text-align: center;
 }
 
 @media (max-width: 700px) {
@@ -626,7 +628,6 @@ ul {
 .main .welcome .name p {
   font-size: 3rem;
   color: #fff;
-  font-family: 'Reenie Beanie', cursive;
   text-shadow: 0 5px 0px rgba(0, 0, 0, 0.2);
 }
 

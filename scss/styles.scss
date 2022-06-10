@@ -436,7 +436,9 @@ $shade: rgba(0, 0, 0, 0.2);
 			linear-gradient(25deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 			backdrop-filter: blur(5px);
 			border-radius: 10px;
-			border-bottom: 2px solid #eee;
+			border-bottom: 1px solid #eee;
+			border-top: 1px solid #eee;
+			text-align: center;
 			@media (max-width: 700px) {
 				width: 90%;
 				padding: 10px;
@@ -481,7 +483,6 @@ $shade: rgba(0, 0, 0, 0.2);
 			p {
 				font-size: 3rem;
 				color: #fff;
-				font-family: 'Reenie Beanie', cursive;
 				text-shadow: 0 5px 0px $shade;
 				@media (max-width: 700px) {
 					font-size: 3rem;
