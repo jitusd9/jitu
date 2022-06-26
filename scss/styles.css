@@ -1107,6 +1107,14 @@ ul {
   padding: 0 5px;
 }
 
+.main .education .container .self-taught .query {
+  color: #878787;
+}
+
+.main .education .container .self-taught .query a {
+  color: #8d53ff;
+}
+
 .main .education .container .self-taught .photo {
   -webkit-box-flex: 1;
       -ms-flex: 1;
