@@ -829,7 +829,6 @@ $shade: rgba(0, 0, 0, 0.2);
 					margin: 10px;
 					strong{
 						padding: 0 5px;
-						// background-color: #ffc014;
 					}
 				}
 				.photo{
@@ -858,12 +857,12 @@ $shade: rgba(0, 0, 0, 0.2);
 							transform-style: preserve-3d;
 						}
 						.photo-front{
-							background-image: url(../img/jitu/jitu-red.png);
+							background-image: url(../img/jitu/my-photo.jpg);
 							transform: rotateY(0deg);
 							
 						}
 						.photo-back{
-							background-image: url(../img/jitu/my-photo.jpg);
+							background-image: url(../img/jitu/jitu-red.png);
 							position: absolute;
 							top: 0;
 							left: 0;

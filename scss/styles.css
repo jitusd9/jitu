@@ -1152,13 +1152,13 @@ ul {
 }
 
 .main .education .container .self-taught .photo .photo-item .photo-front {
-  background-image: url(../img/jitu/jitu-red.png);
+  background-image: url(../img/jitu/my-photo.jpg);
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
 }
 
 .main .education .container .self-taught .photo .photo-item .photo-back {
-  background-image: url(../img/jitu/my-photo.jpg);
+  background-image: url(../img/jitu/jitu-red.png);
   position: absolute;
   top: 0;
   left: 0;
