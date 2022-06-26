@@ -936,11 +936,40 @@ ul {
   }
 }
 
+.main #dev {
+  position: fixed;
+  top: 40px;
+  left: -30px;
+  width: 100px;
+  height: 30px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  color: white;
+  background-color: #202123;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 100;
+}
+
+.main #dev p {
+  margin: 0;
+  padding: 0;
+}
+
 .main .education {
   position: relative;
   height: auto;
   padding-block: 50px;
-  padding-bottom: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -953,6 +982,12 @@ ul {
   z-index: 20;
 }
 
+@media (max-width: 700px) {
+  .main .education {
+    padding-bottom: 150px;
+  }
+}
+
 .main .education .container {
   position: relative;
   padding: 30px;
@@ -962,15 +997,6 @@ ul {
   -webkit-box-shadow: 0 30px 20px -15px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.1) inset;
           box-shadow: 0 30px 20px -15px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.1) inset;
   height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-perspective: 1000px;
           perspective: 1000px;
 }
@@ -979,41 +1005,13 @@ ul {
   .main .education .container {
     position: relative;
     z-index: 0;
-    padding: 40px;
+    padding: 10px;
     width: calc(100vw - 2rem);
     border: none;
     border-radius: 8px;
     background: #f8f8f8;
     -webkit-box-shadow: none;
             box-shadow: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .main .education .container::before {
-    content: "jitu.dev";
-    position: absolute;
-    top: -29px;
-    left: 10px;
-    width: 100px;
-    height: 30px;
-    border-radius: 4px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    color: white;
-    background-color: #353232;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    font-size: 1.1rem;
-    z-index: -1;
   }
 }
 
@@ -1092,6 +1090,7 @@ ul {
 }
 
 .main .education .container .self-taught p {
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -1141,7 +1140,7 @@ ul {
 .main .education .container .self-taught .photo .photo-item .photo-back {
   background-size: cover;
   background-position: center;
-  min-height: 475px;
+  min-height: 375px;
   -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -1261,6 +1260,7 @@ ul {
 }
 
 .main .education .container .personal ul {
+  position: relative;
   list-style: none;
   padding: 0;
   display: -ms-grid;
@@ -1271,7 +1271,9 @@ ul {
 }
 
 .main .education .container .personal ul li {
+  position: relative;
   width: 350px;
+  max-width: 100%;
   margin: 1rem auto;
   padding: 16px 40px;
   border-radius: 12px;
@@ -1309,7 +1311,6 @@ ul {
   .main .education .container .personal ul li {
     border-radius: 4px;
     padding: 10px 30px;
-    width: calc(100% - 2rem);
     border: 1px solid white;
     -webkit-box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
             box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
@@ -1342,6 +1343,12 @@ ul {
 
 .main .education .container .personal ul li:hover a span {
   margin-left: 10px;
+}
+
+@media (max-width: 700px) {
+  .main .education .container .personal ul {
+    display: block;
+  }
 }
 
 .main .contact {

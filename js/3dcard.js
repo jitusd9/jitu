@@ -29,4 +29,4 @@ const backSide = document.querySelector(".photo-back");
 setInterval(() => {
     frontSide.classList.toggle('active');
     backSide.classList.toggle('active');
-}, 4000);
+}, 6000);
