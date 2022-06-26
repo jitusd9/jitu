@@ -21,3 +21,12 @@
 // 		});
 // 	});
 // }
+
+// my photo card 
+const frontSide = document.querySelector(".photo-front");
+const backSide = document.querySelector(".photo-back");
+
+setInterval(() => {
+    frontSide.classList.toggle('active');
+    backSide.classList.toggle('active');
+}, 4000);

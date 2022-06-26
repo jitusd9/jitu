@@ -71,7 +71,7 @@ ul {
 }
 
 .background {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -83,10 +83,9 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #232425;
+  background: #ffffff;
   background: -webkit-gradient(linear, left bottom, left top, from(#060229), to(#000000));
   background: linear-gradient(0deg, #060229, #000000);
-  background: url(../img/SVG/background.svg) center center/cover no-repeat;
   overflow-x: hidden;
 }
 
@@ -940,7 +939,8 @@ ul {
 .main .education {
   position: relative;
   height: auto;
-  padding: 50px 5%;
+  padding-block: 50px;
+  padding-bottom: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -954,6 +954,7 @@ ul {
 }
 
 .main .education .container {
+  position: relative;
   padding: 30px;
   border: 10px solid #fff;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url("../img/tic-tac-toe.png");
@@ -976,8 +977,12 @@ ul {
 
 @media (max-width: 700px) {
   .main .education .container {
-    width: 100vw;
+    position: relative;
+    z-index: 0;
+    padding: 40px;
+    width: calc(100vw - 2rem);
     border: none;
+    border-radius: 8px;
     background: #f8f8f8;
     -webkit-box-shadow: none;
             box-shadow: none;
@@ -986,6 +991,30 @@ ul {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .main .education .container::before {
+    content: "jitu.dev";
+    position: absolute;
+    top: -29px;
+    left: 10px;
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    color: white;
+    background-color: #353232;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 1.1rem;
+    z-index: -1;
+  }
 }
 
 @media (max-width: 700px) {
@@ -993,8 +1022,7 @@ ul {
     color: #272727;
     letter-spacing: 0;
     text-transform: none;
-    font-size: 2.5rem;
-    margin-top: 20px;
+    font-size: 1.5rem;
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   }
 }
@@ -1051,18 +1079,22 @@ ul {
   position: relative;
   margin-top: 24px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-left: none;
-  border-right: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .main .education .container .self-taught p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   display: inline-block;
   font-family: 'Nunito', sans-serif;
   line-height: 3rem;
@@ -1074,34 +1106,99 @@ ul {
 
 .main .education .container .self-taught p strong {
   padding: 0 5px;
-  background-color: #ffc014;
 }
 
 .main .education .container .self-taught .photo {
-  width: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  max-width: 90%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.main .education .container .self-taught .photo .photo-item {
   border: 10px solid #fff;
-  height: 400px;
   border-radius: 2px;
   -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.main .education .container .self-taught .photo img {
-  height: 100%;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  width: 400px;
+  max-width: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 @media (max-width: 700px) {
-  .main .education .container .self-taught .photo:hover {
-    background: #fff;
+  .main .education .container .self-taught .photo .photo-item {
+    width: calc(100vw - 1rem);
+  }
+}
+
+.main .education .container .self-taught .photo .photo-item .photo-front,
+.main .education .container .self-taught .photo .photo-item .photo-back {
+  background-size: cover;
+  background-position: center;
+  min-height: 475px;
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.main .education .container .self-taught .photo .photo-item .photo-front {
+  background-image: url(../img/jitu/jitu-red.png);
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.main .education .container .self-taught .photo .photo-item .photo-back {
+  background-image: url(../img/jitu/my-photo.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.main .education .container .self-taught .photo .photo-item:hover .photo-front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.main .education .container .self-taught .photo .photo-item:hover .photo-back {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+@media (max-width: 700px) {
+  .main .education .container .self-taught .photo .photo-item:hover .photo-front {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  .main .education .container .self-taught .photo .photo-item:hover .photo-back {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
   }
 }
 
 @media (max-width: 700px) {
-  .main .education .container .self-taught .photo:hover img {
-    -webkit-transform: none;
-            transform: none;
+  .main .education .container .self-taught .photo .photo-item .photo-front.active {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+  }
+  .main .education .container .self-taught .photo .photo-item .photo-back.active {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
   }
 }
 
@@ -1119,11 +1216,20 @@ ul {
     margin-left: 0;
     line-height: 2rem;
   }
+  .main .education .container .self-taught .photo {
+    max-width: 90%;
+  }
 }
 
 .main .education .container .personal {
   position: relative;
   margin-top: 30px;
+}
+
+.main .education .container .personal p {
+  width: 90%;
+  margin-inline: auto;
+  font-size: 1.1rem;
 }
 
 .main .education .container .personal .resume {
@@ -1148,10 +1254,10 @@ ul {
   transition: all 0.3s;
 }
 
-.main .education .container .personal h4 {
-  color: #042453b9;
+.main .education .container .personal .sorry {
+  color: #1b1b1cb9;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .main .education .container .personal ul {
@@ -1172,27 +1278,41 @@ ul {
   font-size: 2rem;
   -webkit-box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
           box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main .education .container .personal ul li:nth-child(1) {
-  background: linear-gradient(24deg, #604786, rgba(255, 132, 132, 0)), url(../img/link-bg/blog.jpg) center center/cover no-repeat;
+  background: linear-gradient(45deg, #36ff4e, #219efe);
 }
 
 .main .education .container .personal ul li:nth-child(2) {
-  background: linear-gradient(24deg, #7c6738, rgba(152, 255, 120, 0)), url(../img/link-bg/codepen.jpg) center center/cover no-repeat;
+  background: linear-gradient(45deg, #ff4736, #fe21ce);
 }
 
 .main .education .container .personal ul li:nth-child(3) {
-  background: linear-gradient(24deg, #37848a, rgba(240, 255, 29, 0)), url(../img/link-bg/github.jpg) center center/cover no-repeat;
+  background: linear-gradient(45deg, #ab36ff, #fe4931);
 }
 
 .main .education .container .personal ul li:nth-child(4) {
-  background: linear-gradient(24deg, #3b4e77, rgba(255, 163, 120, 0)), url(../img/link-bg/photos.jpg) center center/cover no-repeat;
+  background: linear-gradient(45deg, #36bcff, #7621fe);
 }
 
 @media (max-width: 700px) {
   .main .education .container .personal ul li {
-    width: calc(100% - 10px);
+    border-radius: 4px;
+    padding: 10px 30px;
+    width: calc(100% - 2rem);
+    border: 1px solid white;
+    -webkit-box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -1214,6 +1334,12 @@ ul {
   transition: all 0.3s;
 }
 
+@media (max-width: 700px) {
+  .main .education .container .personal ul li a {
+    font-size: 1.2rem;
+  }
+}
+
 .main .education .container .personal ul li:hover a span {
   margin-left: 10px;
 }
@@ -1221,12 +1347,19 @@ ul {
 .main .contact {
   padding: 50px;
   position: relative;
+  width: 100%;
   z-index: 20;
+  background-color: #f8f8f8;
 }
 
 @media (max-width: 700px) {
   .main .contact {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     padding: 10px;
+    -webkit-box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -1235,7 +1368,7 @@ ul {
     color: #272727;
     letter-spacing: 0;
     text-transform: none;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   }
 }
@@ -1270,8 +1403,8 @@ ul {
 
 @media (max-width: 700px) {
   .main .contact li a .footer_icon {
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
   }
 }
 

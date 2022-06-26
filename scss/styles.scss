@@ -62,15 +62,15 @@ $shade: rgba(0, 0, 0, 0.2);
 }
 
 .background {
-	position: absolute;
+	position: fixed;
 	height: 100%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #232425;
+	background: #ffffff;
 	background: linear-gradient(0deg, #060229, #000000);
-	background: url(../img/SVG/background.svg) center center /cover no-repeat;
+	// background: url(../img/SVG/background.svg) center center /cover no-repeat;
 	overflow-x: hidden;
 	img {
 		position: absolute;
@@ -699,12 +699,14 @@ $shade: rgba(0, 0, 0, 0.2);
 	.education {
 		position: relative;
 		height: auto;
-		padding: 50px 5%;
+		padding-block: 50px;
+		padding-bottom: 100px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		z-index: 20;
 		.container {
+			position: relative;
 			padding: 30px;
 			border: 10px solid #fff;
 			background:linear-gradient(rgba(255, 255, 255, 0.6),rgba(255, 255, 255, 0.6)), url("../img/tic-tac-toe.png");
@@ -717,13 +719,38 @@ $shade: rgba(0, 0, 0, 0.2);
 
 			perspective: 1000px;
 			// transform-style: preserve-3d;
+
+			
+
 			@media (max-width: 700px) {
-				// padding: 10px;
-				width: 100vw;
+				position: relative;
+				z-index: 0;
+				padding: 40px;
+				width: calc(100vw - 2rem);
 				border: none;
+				border-radius: 8px;
 				background: #f8f8f8;
 				box-shadow: none;
 				flex-direction: column;
+				&::before{
+					content: "jitu.dev";
+					position: absolute;
+					top: -29px;
+					left: 10px;
+					width: 100px;
+					height: 30px;
+					border-radius: 4px;
+					border-bottom-left-radius: 0;
+					border-bottom-right-radius: 0;
+					color: white;
+					background-color: #353232;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 1.1rem;
+					z-index: -1;
+				}
+
 			}
 
 			h2 {
@@ -732,8 +759,8 @@ $shade: rgba(0, 0, 0, 0.2);
 					color: #272727;
 					letter-spacing: 0;
 					text-transform: none;
-					font-size: 2.5rem;
-					margin-top: 20px;
+					font-size: 1.5rem;
+					// margin-top: 20px;
 					text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 				}
 			}
@@ -780,15 +807,13 @@ $shade: rgba(0, 0, 0, 0.2);
 				position: relative;
 				margin-top: 24px;
 				padding: 10px;
-				border: 1px solid #ccc;
-				border-left: none;
-				border-right: none;
 				display: flex;
 				align-items: center;
+				flex-direction: row-reverse;
+				
 				p {
+					flex: 1;
 					display: inline-block;
-					// font-family: 'Noto Sans Mono', monospace;
-					// font-family: 'Merriweather', monospace;
 					font-family: 'Nunito', sans-serif;
 					line-height: 3rem;
 					letter-spacing: -0.5px;
@@ -797,33 +822,75 @@ $shade: rgba(0, 0, 0, 0.2);
 					margin: 10px;
 					strong{
 						padding: 0 5px;
-						background-color: #ffc014;
+						// background-color: #ffc014;
 					}
 				}
 				.photo{
-					width: auto;
-					border: 10px solid #fff;
-					height: 400px;
-					border-radius: 2px;
-					box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-					img{
-						height: 100%;
-						transition: all 0.3s;
-						// transition: translateZ(0px);
-					}
-					&:hover {
-						// background: linear-gradient(45deg, #8c00ff, #00ffff);
-						@media (max-width: 700px) {
-							background: #fff;
+					flex: 1;
+					position: relative;
+					max-width: 90%;
+					backface-visibility: hidden;
+					.photo-item{
+						border: 10px solid #fff;
+						border-radius: 2px;
+						box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+						width: 400px;
+						max-width: 100%;
+						transform-style: preserve-3d;
+						perspective: 1000px;
+						@media (max-width: 700px){
+							width: calc(100vw - 1rem);
 						}
-						img {
-							// box-shadow: 0px 20px 10px -10px $shade;
-							@media (max-width: 700px) {
-								transform: none;
-	
+						.photo-front,
+						.photo-back{
+							background-size: cover;
+							background-position: center;
+							min-height: 475px;
+							transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+							backface-visibility: hidden;
+							transform-style: preserve-3d;
+						}
+						.photo-front{
+							background-image: url(../img/jitu/jitu-red.png);
+							transform: rotateY(0deg);
+							
+						}
+						.photo-back{
+							background-image: url(../img/jitu/my-photo.jpg);
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							transform: rotateY(180deg);
+						}
+						
+						&:hover{
+							.photo-front{
+								transform: rotateY(-180deg);
+								transform-style: preserve-3d;
+							}
+							.photo-back{
+								transform: rotateY(0deg);
+							}
+							@media (max-width: 700px){
+								.photo-front{
+									transform: rotateY(0deg);
+								}
+								.photo-back{
+									transform: rotateY(180deg);
+								}
+							}
+						}
+						@media (max-width: 700px){
+							.photo-front.active{
+								transform: rotateY(-180deg);
+							}
+							.photo-back.active{
+								transform: rotateY(0deg);
 							}
 						}
 					}
+
 				}
 				@media (max-width: 700px) {
 					padding: 0px;
@@ -833,13 +900,20 @@ $shade: rgba(0, 0, 0, 0.2);
 						letter-spacing: 0px;
 						margin-left: 0;
 						line-height: 2rem;
-
+					}
+					.photo{
+						max-width: 90%;
 					}
 				}
 			}
 			.personal {
 				position: relative;
 				margin-top: 30px;
+				p{
+					width: 90%;
+					margin-inline: auto;
+					font-size: 1.1rem;
+				}
 				.resume{
 					width: 350px;
 					margin: 1rem auto;
@@ -858,10 +932,10 @@ $shade: rgba(0, 0, 0, 0.2);
 						transition: all 0.3s;
 					}
 				}
-				h4{
-					color: #042453b9;
+				.sorry{
+					color: #1b1b1cb9;
 					text-align: center;
-					font-size: 1.1rem;
+					font-size: 1rem;
 				}
 				ul{
 					list-style: none;
@@ -876,20 +950,27 @@ $shade: rgba(0, 0, 0, 0.2);
 						border-radius: 12px;
 						font-size: 2rem;
 						box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+						display: flex;
+						align-items: center;
+						justify-content: center;
 						&:nth-child(1){
-							background: linear-gradient(24deg, rgb(96, 71, 134), rgba(255, 132, 132, 0)), url(../img/link-bg/blog.jpg) center center /cover no-repeat ;
+							background: linear-gradient(45deg, rgb(54, 255, 78), rgb(33, 158, 254));
 						}
 						&:nth-child(2){
-							background:linear-gradient(24deg, rgb(124, 103, 56), rgba(152, 255, 120, 0)), url(../img/link-bg/codepen.jpg) center center /cover no-repeat ;
+							background: linear-gradient(45deg, rgb(255, 71, 54), rgb(254, 33, 206));
 						}
 						&:nth-child(3){
-							background: linear-gradient(24deg, rgb(55, 132, 138), rgba(240, 255, 29, 0)), url(../img/link-bg/github.jpg) center center /cover no-repeat ;
+							background: linear-gradient(45deg, rgb(171, 54, 255), rgb(254, 73, 49));
 						}
 						&:nth-child(4){
-							background: linear-gradient(24deg, rgb(59, 78, 119), rgba(255, 163, 120, 0)), url(../img/link-bg/photos.jpg) center center /cover no-repeat ;
+							background: linear-gradient(45deg, rgb(54, 188, 255), rgb(118, 33, 254));
 						}
 						@media (max-width: 700px){
-							width: calc(100% - 10px);
+							border-radius: 4px;
+							padding: 10px 30px;
+							width: calc(100% - 2rem);
+							border: 1px solid white;
+							box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
 						}
 						a{	
 							font-size: 1.6rem;
@@ -903,6 +984,9 @@ $shade: rgba(0, 0, 0, 0.2);
 								font-weight: lighter;
 								width: 150%;
 								transition: all 0.3s;
+							}
+							@media (max-width: 700px){
+								font-size: 1.2rem;
 							}
 						}
 						&:hover{
@@ -921,9 +1005,15 @@ $shade: rgba(0, 0, 0, 0.2);
 	.contact {
 		padding: 50px;
 		position: relative;
+		width: 100%;
 		z-index: 20;
+		background-color: #f8f8f8;
 		@media (max-width: 700px) {
+			position: fixed;
+			left: 0;
+			bottom: 0;
 			padding: 10px;
+			box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
 		}
 		h2 {
 			// text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
@@ -931,7 +1021,7 @@ $shade: rgba(0, 0, 0, 0.2);
 				color: #272727;
 				letter-spacing: 0;
 				text-transform: none;
-				font-size: 2.5rem;
+				font-size: 1.5rem;
 				// margin-top: 20px;
 				text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 			}
@@ -951,8 +1041,8 @@ $shade: rgba(0, 0, 0, 0.2);
 					height: 50px;
 					width: 50px;
 					@media (max-width: 700px) {
-						height: 30px;
-						width: 30px;
+						height: 20px;
+						width: 20px;
 					}
 				}
 				span {
