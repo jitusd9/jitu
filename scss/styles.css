@@ -70,6 +70,36 @@ ul {
   color: #808080;
 }
 
+#dev {
+  position: fixed;
+  top: 40px;
+  left: -30px;
+  width: 100px;
+  height: 30px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  color: white;
+  background-color: #202123;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 100;
+}
+
+#dev p {
+  margin: 0;
+  padding: 0;
+}
+
 .background {
   position: fixed;
   height: 100%;
@@ -100,8 +130,8 @@ ul {
 
 @media (max-width: 700px) {
   .background img {
-    top: 8%;
-    left: 8.5%;
+    top: 0%;
+    left: 0%;
     width: 150%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -936,36 +966,6 @@ ul {
   }
 }
 
-.main #dev {
-  position: fixed;
-  top: 40px;
-  left: -30px;
-  width: 100px;
-  height: 30px;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  border-radius: 4px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  color: white;
-  background-color: #202123;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  z-index: 100;
-}
-
-.main #dev p {
-  margin: 0;
-  padding: 0;
-}
-
 .main .education {
   position: relative;
   height: auto;
@@ -1075,7 +1075,6 @@ ul {
 
 .main .education .container .self-taught {
   position: relative;
-  margin-top: 24px;
   padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1087,13 +1086,12 @@ ul {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .main .education .container .self-taught p {
   position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   display: inline-block;
   font-family: 'Nunito', sans-serif;
   line-height: 3rem;
@@ -1116,9 +1114,6 @@ ul {
 }
 
 .main .education .container .self-taught .photo {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   position: relative;
   max-width: 90%;
   -webkit-backface-visibility: hidden;
@@ -1157,6 +1152,42 @@ ul {
           backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .education .container .self-taught .photo .photo-item .photo-front .inside,
+.main .education .container .self-taught .photo .photo-item .photo-back .inside {
+  -webkit-transform: translateZ(40px);
+          transform: translateZ(40px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .education .container .self-taught .photo .photo-item .photo-front .inside p,
+.main .education .container .self-taught .photo .photo-item .photo-back .inside p {
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-shadow: 0 6px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
 }
 
 .main .education .container .self-taught .photo .photo-item .photo-front {
@@ -1327,18 +1358,24 @@ ul {
 
 .main .education .container .personal ul li a {
   font-size: 1.6rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-weight: light;
+  text-transform: lowercase;
   color: white;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main .education .container .personal ul li a span {
   font-weight: lighter;
-  width: 150%;
+  margin-inline: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -1350,7 +1387,7 @@ ul {
 }
 
 .main .education .container .personal ul li:hover a span {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 @media (max-width: 700px) {
@@ -1360,7 +1397,7 @@ ul {
 }
 
 .main .contact {
-  padding: 50px;
+  padding: 2em;
   position: relative;
   width: 100%;
   z-index: 20;
@@ -1370,16 +1407,32 @@ ul {
 @media (max-width: 700px) {
   .main .contact {
     position: fixed;
-    left: 0;
-    bottom: 0;
-    padding: 10px;
+    left: -15%;
+    bottom: -5%;
+    width: 130%;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    -webkit-transform: rotate(-6deg);
+            transform: rotate(-6deg);
     -webkit-box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
             box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
   }
 }
 
+.main .contact .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @media (max-width: 700px) {
-  .main .contact h2 {
+  .main .contact .container h2 {
     color: #272727;
     letter-spacing: 0;
     text-transform: none;
@@ -1388,12 +1441,12 @@ ul {
   }
 }
 
-.main .contact li {
+.main .contact .container ul li {
   display: inline-block;
   margin: 10px;
 }
 
-.main .contact li a {
+.main .contact .container ul li a {
   text-decoration: none;
   font-size: 2rem;
   display: -webkit-box;
@@ -1411,29 +1464,29 @@ ul {
           flex-direction: column;
 }
 
-.main .contact li a .footer_icon {
+.main .contact .container ul li a .footer_icon {
   height: 50px;
   width: 50px;
 }
 
 @media (max-width: 700px) {
-  .main .contact li a .footer_icon {
+  .main .contact .container ul li a .footer_icon {
     height: 20px;
     width: 20px;
   }
 }
 
-.main .contact li a span {
+.main .contact .container ul li a span {
   font-size: 1.1rem;
 }
 
 @media (max-width: 700px) {
-  .main .contact li a span {
+  .main .contact .container ul li a span {
     font-size: 0.7rem;
   }
 }
 
-.main .contact li a:hover {
+.main .contact .container ul li a:hover {
   color: #fe3503;
 }
 
