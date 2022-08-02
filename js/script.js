@@ -27,24 +27,35 @@
 const projects = [
     {
         name : "memory game",
-        description : "",
-        source : "",
-        demo : "",
-        thumbnail : ""
+        description : "Memory game is where user filp tiles and see if they match, built with react.js",
+        source : "https://github.com/jitusd9/memory-game",
+        demo : "https://match-tiles.netlify.app/",
+        thumbnail : "/img/matchTiles.webm",
+        thumbType : "video"
+    },
+    {
+        name : "Idea Bucket",
+        description : "In this app I use to write whatever comes in my mind (ideas).",
+        source : "#",
+        demo : "https://ideabucket.netlify.app/",
+        thumbnail : "/img/idea-bkt.webm",
+        thumbType : "video"
     },
     {
         name : "Quiz App",
-        description : "",
-        source : "",
-        demo : "",
-        thumbnail : ""
+        description : "Quiz app for various topics using external api built with react.js",
+        source : "#",
+        demo : "#",
+        thumbnail : "/img/bizwiz.gif",
+        thumbType : "image"
     },
     {
         name : "Medium Clone",
-        description : "",
-        source : "",
-        demo : "",
-        thumbnail : ""
+        description : "popular blogging website medium.com clone also in reactjs",
+        source : "#",
+        demo : "#",
+        thumbnail : "/img/bizwiz.gif",
+        thumbType : "image"
     }
 ]
 
@@ -53,43 +64,66 @@ const projectContainer = document.querySelector(".projects");
 
 function appendProjects(){
     //list all the projects available 
-    let card = document.createElement('div');
-    card.classList.add('card', 'added');
 
-    let thumb = document.createElement('div');
-    thumb.classList.add('thumb');
-    let img = document.createElement('img');
-    img.src = "./img/bizwiz.gif";
-    img.alt = "project preview";
-    thumb.append(img);
+    projects.forEach(project => {
 
-    let name = document.createElement('h3');
-    name.innerText = "Memory Game";
-
-    let p = document.createElement('p');
-    p.innerText = "Memory game is where user filp tiles and see if they match, built with react.js"
+        let card = document.createElement('div');
+        card.classList.add('card', 'added');
     
-    let btns = document.createElement('div');
-    btns.classList.add('btns');
-    let aSource = document.createElement('a');
-    aSource.classList.add("source");
-    aSource.setAttribute("target", "_blank");
-    aSource.href = "https://github.com/jitusd9/memory-game";
-    aSource.innerText = "Source Code"
-    btns.append(aSource);
-    let aLive = document.createElement('a');
-    aLive.classList.add("live");
-    aLive.setAttribute("target", "_blank");
-    aLive.href = "https://match-tiles.netlify.app/";
-    aLive.innerText = "Live"
-    btns.append(aLive);
+        let thumb = document.createElement('div');
+        thumb.classList.add('thumb');
+        if(project.thumbType === "image"){
+            let img = document.createElement('img');
+            img.src = project.thumbnail;
+            img.alt = "project preview";
+            thumb.append(img);
+        }else{
+            let video = document.createElement('video');
+            video.setAttribute("loop", "");
+            video.setAttribute("autoplay", "");
+            video.setAttribute("muted", "");
+            let videoSource = document.createElement('source');
+            videoSource.src = project.thumbnail;
+            videoSource.type = "video/webm";
+            video.append(videoSource);
+            // video.innerHTML = `
+            // <source src="${project.thumbnail}" type="video/webm">
+            // Your browser does not support the video tag.
+            // `;
+            thumb.append(video);
+        }
 
-    card.append(thumb);
-    card.append(name);
-    card.append(p);
-    card.append(btns);
+    
+        let name = document.createElement('h3');
+        name.innerText = project.name;
+    
+        let p = document.createElement('p');
+        p.innerText = project.description
+        
+        let btns = document.createElement('div');
+        btns.classList.add('btns');
+        let aSource = document.createElement('a');
+        aSource.classList.add("source");
+        aSource.setAttribute("target", "_blank");
+        aSource.href = project.source;
+        aSource.innerText = "Source Code"
+        btns.append(aSource);
+        let aLive = document.createElement('a');
+        aLive.classList.add("live");
+        aLive.setAttribute("target", "_blank");
+        aLive.href = project.demo;
+        aLive.innerText = "Live"
+        btns.append(aLive);
+    
+        card.append(thumb);
+        card.append(name);
+        card.append(p);
+        card.append(btns);
+    
+        projectContainer.append(card);
 
-    projectContainer.append(card);
+    })
+
 }
 
 function removeProjects(){
@@ -106,7 +140,7 @@ moreBtn.addEventListener('click', () => {
         appendProjects();
     }else{
         moreBtn.dataset.clicked = "false";
-        moreBtn.innerHTML = "more projects";
+        moreBtn.innerHTML = "more";
         removeProjects();
     }
 

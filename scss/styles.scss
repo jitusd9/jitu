@@ -960,6 +960,12 @@ $shade: rgba(0, 0, 0, 0.2);
 					width: 300px;
 					padding: 1rem;
 					box-shadow: 0 10px 0 -5px rgb(241, 241, 241), 0 20px 0 -10px rgb(235, 235, 235);
+					h3{
+						font-size: 1.5rem;
+						margin-bottom: 0;
+						margin-top: 10px;
+						font-family: "Poppins",sans-serif;
+					}
 					p{
 						padding-block: 10px;
 					}
@@ -967,6 +973,10 @@ $shade: rgba(0, 0, 0, 0.2);
 						img{
 							width: 100%;
 							border-radius: 4px;
+						}
+						video{
+							width: 100%;
+							user-select: none;
 						}
 					}
 					.btns{
@@ -980,6 +990,7 @@ $shade: rgba(0, 0, 0, 0.2);
 							border-radius: 4px;
 							color: white;
 							padding: 0.2rem 0.5rem;
+							margin-inline: 0.2rem;
 						}
 						.live{
 							background-color: #00ac64;

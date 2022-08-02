@@ -1286,6 +1286,13 @@ ul {
           box-shadow: 0 10px 0 -5px #f1f1f1, 0 20px 0 -10px #ebebeb;
 }
 
+.main .education .container .projects .card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-family: "Poppins",sans-serif;
+}
+
 .main .education .container .projects .card p {
   padding-block: 10px;
 }
@@ -1293,6 +1300,14 @@ ul {
 .main .education .container .projects .card .thumb img {
   width: 100%;
   border-radius: 4px;
+}
+
+.main .education .container .projects .card .thumb video {
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .main .education .container .projects .card .btns {
@@ -1309,6 +1324,7 @@ ul {
   border-radius: 4px;
   color: white;
   padding: 0.2rem 0.5rem;
+  margin-inline: 0.2rem;
 }
 
 .main .education .container .projects .card .btns .live {
