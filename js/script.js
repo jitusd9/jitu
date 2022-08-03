@@ -34,6 +34,14 @@ const projects = [
         thumbType : "video"
     },
     {
+        name : "HeyPal",
+        description : "Mini Social Media application where user can post content and other can comments,built with react.js and firebase for storage and authenticaiton.",
+        source : "https://github.com/jitusd9/HeyPal",
+        demo : "https://friendly-33b9e.web.app/",
+        thumbnail : "/img/heypal.webm",
+        thumbType : "video"
+    },
+    {
         name : "Idea Bucket",
         description : "In this app I use to write whatever comes in my mind (ideas).",
         source : "#",
@@ -42,11 +50,27 @@ const projects = [
         thumbType : "video"
     },
     {
+        name : "Sudoku Solver",
+        description : "Solve any 9x9 sudoku. html/css/js ",
+        source : "https://github.com/jitusd9/SudokuSolution",
+        demo : "https://jitusd9.github.io/SudokuSolution/",
+        thumbnail : "/img/sudoku.webm",
+        thumbType : "video"
+    },
+    {
+        name : "Todo App",
+        description : "Simple ToDo app in vanilla Javascript html/CSS with localstorage",
+        source : "https://github.com/jitusd9/todo-REVISITED",
+        demo : "https://jitusd9.github.io/todo-REVISITED",
+        thumbnail : "/img/todoapp.webm",
+        thumbType : "video"
+    },
+    {
         name : "Quiz App",
         description : "Quiz app for various topics using external api built with react.js",
         source : "#",
         demo : "#",
-        thumbnail : "/img/bizwiz.gif",
+        thumbnail : "/img/thumbnail.jpg",
         thumbType : "image"
     },
     {
@@ -54,7 +78,7 @@ const projects = [
         description : "popular blogging website medium.com clone also in reactjs",
         source : "#",
         demo : "#",
-        thumbnail : "/img/bizwiz.gif",
+        thumbnail : "/img/thumbnail.jpg",
         thumbType : "image"
     }
 ]
@@ -102,18 +126,25 @@ function appendProjects(){
         
         let btns = document.createElement('div');
         btns.classList.add('btns');
-        let aSource = document.createElement('a');
-        aSource.classList.add("source");
-        aSource.setAttribute("target", "_blank");
-        aSource.href = project.source;
-        aSource.innerText = "Source Code"
-        btns.append(aSource);
-        let aLive = document.createElement('a');
-        aLive.classList.add("live");
-        aLive.setAttribute("target", "_blank");
-        aLive.href = project.demo;
-        aLive.innerText = "Live"
-        btns.append(aLive);
+        
+        if(project.source !== "#"){
+            let aSource = document.createElement('a');
+            aSource.classList.add("source");
+            aSource.setAttribute("target", "_blank");
+            aSource.href = project.source;
+            aSource.innerText = "Source Code"
+            btns.append(aSource);
+        }
+
+        if(project.demo !== "#"){
+            console.log(project.demo === "#");
+            let aLive = document.createElement('a');
+            aLive.classList.add("live");
+            aLive.setAttribute("target", "_blank");
+            aLive.href = project.demo;
+            aLive.innerText = "Live"
+            btns.append(aLive);
+        }
     
         card.append(thumb);
         card.append(name);
