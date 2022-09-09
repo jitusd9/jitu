@@ -21,10 +21,10 @@ ul {
 .sub-head {
   font-size: 4rem;
   letter-spacing: 8px;
-  color: #00ff95;
+  color: #0cff7f;
   font-weight: bold;
   text-transform: uppercase;
-  text-shadow: 5px 5px 0 #6d82ff;
+  text-shadow: 5px 5px 0 #464347;
 }
 
 @media (max-width: 700px) {
@@ -1084,23 +1084,16 @@ ul {
 .main .education .container .self-taught {
   position: relative;
   padding: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 .main .education .container .self-taught p {
   position: relative;
-  display: inline-block;
+  display: inline;
   font-family: 'Nunito', sans-serif;
   line-height: 3rem;
   letter-spacing: -0.5px;
@@ -1119,6 +1112,22 @@ ul {
 
 .main .education .container .self-taught .query a {
   color: #8d53ff;
+}
+
+.main .education .container .self-taught .profile-photo {
+  position: relative;
+  width: 120px;
+  float: left;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.main .education .container .self-taught .profile-photo img {
+  position: relative;
+  border-radius: 8px;
+  width: 100%;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .main .education .container .self-taught .photo {
