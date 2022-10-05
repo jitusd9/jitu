@@ -42,6 +42,14 @@ const projects = [
         thumbType : "video"
     },
     {
+        name : "Todo App",
+        description : "Simple ToDo app in vanilla Javascript html/CSS with localstorage",
+        source : "https://github.com/jitusd9/todo-REVISITED",
+        demo : "https://jitusd9.github.io/todo-REVISITED",
+        thumbnail : "/img/todoapp.webm",
+        thumbType : "video"
+    },
+    {
         name : "Idea Bucket",
         description : "In this app I use to write whatever comes in my mind (ideas).",
         source : "#",
@@ -55,14 +63,6 @@ const projects = [
         source : "https://github.com/jitusd9/SudokuSolution",
         demo : "https://jitusd9.github.io/SudokuSolution/",
         thumbnail : "/img/sudoku.webm",
-        thumbType : "video"
-    },
-    {
-        name : "Todo App",
-        description : "Simple ToDo app in vanilla Javascript html/CSS with localstorage",
-        source : "https://github.com/jitusd9/todo-REVISITED",
-        demo : "https://jitusd9.github.io/todo-REVISITED",
-        thumbnail : "/img/todoapp.webm",
         thumbType : "video"
     },
     {

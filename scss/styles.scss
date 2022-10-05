@@ -17,6 +17,26 @@ ul {
 	padding: 0;
 }
 
+@keyframes wave{
+	0%{
+		transform: rotate(-5deg);
+	}
+	10%{
+		transform: rotate(5deg);
+	}
+	20%{
+		transform: rotate(0deg);
+	}
+	80%{
+		transform: rotate(0deg);
+	}
+	90%{
+		transform: rotate(-5deg);
+	}
+	100%{
+		transform: rotate(5deg);
+	}
+}
 
 .sub-head {
 	font-size: 4rem;
@@ -25,7 +45,12 @@ ul {
 	font-weight: bold;
 	text-transform: uppercase;
 	text-shadow: 5px 5px 0 #464347;
-
+	div{
+		display: inline-block;
+		transform-origin: bottom;
+		text-shadow: none;
+		animation: wave 800ms infinite alternate linear;
+	}
 	@media (max-width: 700px) {
 		text-shadow: 2px 2px 0 rgba(0, 60, 255, 0.7);
 		letter-spacing: 2px;
@@ -833,7 +858,6 @@ $shade: rgba(0, 0, 0, 0.2);
 					letter-spacing: -0.5px;
 					font-size: 1.6rem;
 					color: #38313f;
-					margin: 10px;
 					strong{
 						padding: 0 5px;
 					}
