@@ -58,14 +58,6 @@ const projects = [
         thumbType : "video"
     },
     {
-        name : "Sudoku Solver",
-        description : "Solve any 9x9 sudoku. html/css/js ",
-        source : "https://github.com/jitusd9/SudokuSolution",
-        demo : "https://jitusd9.github.io/SudokuSolution/",
-        thumbnail : "/img/sudoku.webm",
-        thumbType : "video"
-    },
-    {
         name : "Quiz App",
         description : "Quiz app for various topics using external api built with react.js",
         source : "#",
