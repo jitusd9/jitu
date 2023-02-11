@@ -57,22 +57,22 @@ const projects = [
         thumbnail : "/img/idea-bkt.webm",
         thumbType : "video"
     },
-    {
-        name : "Quiz App",
-        description : "Quiz app for various topics using external api built with react.js",
-        source : "#",
-        demo : "#",
-        thumbnail : "/img/thumbnail.jpg",
-        thumbType : "image"
-    },
-    {
-        name : "Medium Clone",
-        description : "popular blogging website medium.com clone also in reactjs",
-        source : "#",
-        demo : "#",
-        thumbnail : "/img/thumbnail.jpg",
-        thumbType : "image"
-    }
+    // {
+    //     name : "Quiz App",
+    //     description : "Quiz app for various topics using external api built with react.js",
+    //     source : "#",
+    //     demo : "#",
+    //     thumbnail : "/img/thumbnail.jpg",
+    //     thumbType : "image"
+    // },
+    // {
+    //     name : "Medium Clone",
+    //     description : "popular blogging website medium.com clone also in reactjs",
+    //     source : "#",
+    //     demo : "#",
+    //     thumbnail : "/img/thumbnail.jpg",
+    //     thumbType : "image"
+    // }
 ]
 
 const moreBtn = document.querySelector("#more");
